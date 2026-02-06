@@ -1,0 +1,18 @@
+---
+- name: Add a new EPG
+  cisco.aci.aci_epg:
+    host: '{{ ansible_host }}'
+    username: '{{ ansible_user }}'
+    password: '{{ ansible_password }}'
+    tenant: demo-tenant-zasylbek
+    ap: Workshop
+    epg: "{{ item.name }}"
+    description: "{{ item.desc }}"
+    monitoring_policy: default
+    state: present
+    validate_certs: false
+  delegate_to: localhost
+  loop:
+    - { name: 'web', desc: 'Web EPG'}
+    - { name: 'app', desc: 'APP EPG'}
+    - { name: 'db', desc: 'DB EPG'}

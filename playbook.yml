@@ -1,0 +1,5 @@
+---
+- name: APIC Playbook
+  hosts: apic_1
+  roles:
+    - cisco_aci

@@ -1,0 +1,12 @@
+---
+- name: APIC query
+  ansible.builtin.import_tasks: apic_query.yml
+
+- name: Add a new tenant
+  ansible.builtin.import_tasks: add_tenant.yml
+
+- name: Add a new AP
+  ansible.builtin.import_tasks: add_ap.yml
+
+- name: Add a new EPG
+  ansible.builtin.import_tasks: add_epg.yml
